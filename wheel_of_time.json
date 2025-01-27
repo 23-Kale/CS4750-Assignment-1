@@ -1,0 +1,121 @@
+{
+  "books": [
+    {
+      "order": 1,
+      "title": "The Eye of the World",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.19,
+      "mcburneyScore": 3,
+      "mcburneyReview": "It reads kinda like a Fellowship of the Ring rip-off, but that was sort of forced to get the book published. It's okay, but the series took 2 books to hook me."
+    },
+    {
+      "order": 2,
+      "title": "The GreatHunt",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.27,
+      "mcburneyScore": 5,
+      "mcburneyReview": "This is where I fell in love with the series wholeheartedly. Book 2 is *really* where the Wheel of Time hints at it's amazing scope and depth."
+    },
+    {
+      "order": 3,
+      "title": "The Dragon Reborn",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.28,
+      "mcburneyScore": 4,
+      "mcburneyReview": "I was just upset to see so little of the main character. Has some extremely important lore reveals that become the bedrock of much of the series."
+    },
+    {
+      "order": 4,
+      "title": "The Shadow Rising",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.28,
+      "mcburneyScore": 5,
+      "mcburneyReview": "Easily was my favorite book. The last 200 pages I read in one sitting because I couldn't put it down."
+    },
+    {
+      "order": 5,
+      "title": "The Fires of Heaven",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.20,
+      "mcburneyScore": 4,
+      "mcburneyReview": "The second half of this book is 5/5 and among the best in the series. The first half has a plotline that drags the pace to a halt."
+    },
+    {
+      "order": 6,
+      "title": "Lord Of Chaos",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.19,
+      "mcburneyScore": 4,
+      "mcburneyReview": "The series starts to spread out and slow down, as this very much enters the series's \"middle-game\" phase. The ending, however, is 5/5 again."
+    },
+    {
+      "order": 7,
+      "title": "A Crown of Swords",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.07,
+      "mcburneyScore": 4,
+      "mcburneyReview": "For many, the start of \"The Slog\", but it's not that bad, with definite high points. The ending was a bit confusing."
+    },
+    {
+      "order": 8,
+      "title": "The Path of Daggers",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 3.93,
+      "mcburneyScore": 3,
+      "mcburneyReview": "About a year after reading it, I struggle to remember much of anything happening in this book. It felt very slow when reading."
+    },
+    {
+      "order": 9,
+      "title": "Winter's Heart",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 3.97,
+      "mcburneyScore": 5,
+      "mcburneyReview": "While other storylines are still \"setting up\" for later payoffs, the main character's storyline in this book is absolutely fantastic. I loved reading this book, and don't get why others consider it part of \"The Slog\""
+    },
+    {
+      "order": 10,
+      "title": "The Crossroads of Twilight",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 3.78,
+      "mcburneyScore": 3,
+      "mcburneyReview": "The worst Wheel of Time book I've read is still a good book. Not \"bad\", it just serves as the last bit of setup before plots start paying off big time in Knife of Dream."
+    },
+    {
+      "title": "New Spring",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.07,
+      "mcburneyScore": 4,
+      "mcburneyReview": "A fun prequel adventure. Not necessary to read, but it's a good palate cleanser if the slow pacing of the last few books gets you down. Gives some great lore into Moraine and Lan."
+    },
+    {
+      "order": 11,
+      "title": "Knife of Dreams",
+      "sandersonCoWrote": false,
+      "goodreadsAverage": 4.20,
+      "mcburneyScore": 4,
+      "mcburneyReview": "Robert Jordan's final book before his death pays off so many plotlines! Action-packed, we see how the massive cast has grown over the years. This is also the last book I have read so far, but hope to finish the series in 2025."
+    },
+    {
+      "order": 12,
+      "title": "The Gathering Storm",
+      "sandersonCoWrote": true,
+      "goodreadsAverage": 4.43
+    },
+    {
+      "order": 13,
+      "title": "Towers of Midnight",
+      "sandersonCoWrote": true,
+      "goodreadsAverage": 4.43
+    },
+    {
+      "order": 14,
+      "title": "A Memory of Light",
+      "sandersonCoWrote": true,
+      "goodreadsAverage": 4.57
+    }
+  ],
+  "tv": {
+    "season1": "Disappointingly bad. Tons of unnecessary changes, most of them for the worse. Really missed on the tone of the series.",
+    "season2": "A significant improvement over season 1. There are still some changes I don't love, but closer to the source material. Gives me hope they can save it."
+  }
+}
