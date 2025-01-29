@@ -1,6 +1,7 @@
 #Import argparse for easy CLI
 import argparse
 import json
+import sqlite3
 
 #Function to check if the filetypes are correct
 def checkFiles(args):
@@ -57,7 +58,24 @@ def jsonToArray(jsonFile, medium):
         result.append(entry)
     return result
     
-    
+def chuck_into_database(parsed, medium):
+    connection = sqlite3.connect(medium)
+    cursor = connection.cursor()
+
+    #HUGE ASSUMPTION
+    #We are creating this database SOLELY to take in these book reviews and put them into a sqlite3 database.
+    cursor.execute('CREATE TABLE books(id primary key,'
+                   'order_number int,'
+                   'title text,'
+                   'sandersonCoWrote int,'
+                   'goodreadsAverage real,'
+                   'mcburneyScore int,'
+                   'mcburneyReview text)')
+    for i in range(len(parsed)):
+        cursor.execute("INSERT INTO books VALUES(?, ?, ?, ?, ?, ?, ?)", tuple([i] + parsed[i]))
+    connection.commit()
+    connection.close()
+    return 0
 
 def main():
     ###Throw all underneath into main prolly
@@ -76,9 +94,12 @@ def main():
     jsonFile = openJSON(args)
     
     #Get the array of reviews
-    jsonToArray(jsonFile, "books")
-    
-    
+    parsed_input = jsonToArray(jsonFile, "books")
+
+    #print parsed_input to check for errors/weird input
+    #for i in parsed_input: print(i)
+    chuck_into_database(parsed_input, args.names[1])
+
 if __name__ == "__main__":
     #Call the main function
     main()
