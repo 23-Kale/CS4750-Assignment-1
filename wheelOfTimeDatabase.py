@@ -41,11 +41,11 @@ def jsonToArray(jsonFile, medium):
         for category in review:
             match category:
                 case "order":
-                    entry[0] = review[category] #int
+                    entry[1] = review[category] #int
                 case "title":
-                    entry[1] = review[category] #String
+                    entry[0] = review[category] #String, using title as primary key now so title should be first
                 case "sandersonCoWrote":
-                    entry[2] = review[category] #Boolean
+                    entry[2] = review[category] #Boolean (Integer in sqlite3)
                 case "goodreadsAverage":
                     entry[3] = review[category] #real number (double)
                 case "mcburneyScore":
@@ -64,15 +64,13 @@ def chuck_into_database(parsed, medium):
 
     #HUGE ASSUMPTION
     #We are creating this database SOLELY to take in these book reviews and put them into a sqlite3 database.
-    cursor.execute('CREATE TABLE books(id primary key,'
-                   'order_number int,'
-                   'title text,'
-                   'sandersonCoWrote int,'
-                   'goodreadsAverage real,'
-                   'mcburneyScore int,'
-                   'mcburneyReview text)')
-    for i in range(len(parsed)):
-        cursor.execute("INSERT INTO books VALUES(?, ?, ?, ?, ?, ?, ?)", tuple([i] + parsed[i]))
+    cursor.execute('CREATE TABLE books(title TEXT PRIMARY KEY,'
+                   'orderNumber INT,'
+                   'sandersonCoWrote INT,'
+                   'goodreadsAverage REAL,'
+                   'mcburneyScore INT,'
+                   'mcburneyReview TEXT)')
+    cursor.executemany("INSERT INTO books VALUES(?, ?, ?, ?, ?, ?)", parsed)
     connection.commit()
     connection.close()
     return 0
@@ -80,7 +78,7 @@ def chuck_into_database(parsed, medium):
 def main():
     ###Throw all underneath into main prolly
     #Parser object
-    parser = argparse.ArgumentParser(description = "An addition program")
+    parser = argparse.ArgumentParser(description = "Insert JSON to database")
     
     #Argument checking the commands
     #Set nargs to 1 to ensure 2 arguments are passed in
