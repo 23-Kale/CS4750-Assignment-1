@@ -13,7 +13,7 @@ def checkFiles(args):
 #Function to open JSON in read to get information
 #Assumption that JSON is in the same folder
 def openJSON(args):
-    
+
     #First check if filetypes are right
     checkFiles(args)
     
@@ -40,10 +40,10 @@ def jsonToArray(jsonFile, medium):
         entry = [None] * 6
         for category in review:
             match category:
+                case "title":
+                    entry[0] = review[category]  # String, using title as primary key now so title should be first
                 case "order":
                     entry[1] = review[category] #int
-                case "title":
-                    entry[0] = review[category] #String, using title as primary key now so title should be first
                 case "sandersonCoWrote":
                     entry[2] = review[category] #Boolean (Integer in sqlite3)
                 case "goodreadsAverage":
@@ -54,7 +54,7 @@ def jsonToArray(jsonFile, medium):
                     entry[5] = review[category] #String
                 case _:
                     raise Exception("Unknown rating category encountered: " + category)
-        
+
         result.append(entry)
     return result
     
@@ -62,8 +62,6 @@ def chuck_into_database(parsed, medium):
     connection = sqlite3.connect(medium)
     cursor = connection.cursor()
 
-    #HUGE ASSUMPTION
-    #We are creating this database SOLELY to take in these book reviews and put them into a sqlite3 database.
     cursor.execute('CREATE TABLE books(title TEXT PRIMARY KEY,'
                    'orderNumber INT,'
                    'sandersonCoWrote INT,'
@@ -71,9 +69,9 @@ def chuck_into_database(parsed, medium):
                    'mcburneyScore INT,'
                    'mcburneyReview TEXT)')
     cursor.executemany("INSERT INTO books VALUES(?, ?, ?, ?, ?, ?)", parsed)
+
     connection.commit()
     connection.close()
-    return 0
 
 def main():
     ###Throw all underneath into main prolly
@@ -97,6 +95,7 @@ def main():
     #print parsed_input to check for errors/weird input
     #for i in parsed_input: print(i)
     chuck_into_database(parsed_input, args.names[1])
+    print("Data from "+args.names[1]+" written to "+args.names[0]+".sqlite successfully.")
 
 if __name__ == "__main__":
     #Call the main function
