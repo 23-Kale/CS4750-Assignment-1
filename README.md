@@ -2,7 +2,7 @@
 # Written by Jake Li and Matt Shipe
 
 To run, run the following command:
-py.wheelOfTimeDatabase.py *jsonName* *databaseName*
+py wheelOfTimeDatabase.py *jsonName* *databaseName*
 
 Notes:
 Note that the json file must end in .json and the sqlite file must end in .sqlite.
